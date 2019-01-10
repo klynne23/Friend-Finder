@@ -19,7 +19,7 @@ app.use(express.json());
 // Routes
 // =============================================================
 
-app.get("*", )
+app.get("*")
 
 // home page, display the home.html
 app.get('/', (req, res) => {
@@ -32,22 +32,22 @@ app.get("/survey", (req, res) => {
 })
 
 // link to the Friends API, will return the json formatted friendsArray (which is being required from friends.js)
-app.get("/friends", function(req, res) {
+app.get("/friends", function (req, res) {
     return res.json(friendsArray);
-  });
+});
 
-app.post("/friends", function(req, res){
+app.post("/friends", function (req, res) {
 
     // set the request object body equal to a variable
     var newFriend = req.body;
 
     // set the newFriend property answers (the array of user answers) equal to a variable
-    var userA = newFriend.answers;
+    var userA = newFriend.scores;
 
     // parse the user answers so that they are integers
     var userANum = [];
 
-    userA.forEach(function(e){
+    userA.forEach(function (e) {
         var x = parseInt(e);
         userANum.push(x);
     });
@@ -59,18 +59,18 @@ app.post("/friends", function(req, res){
     var sal = 0;
     var q = 0;
     var murr = 0;
-    
+
     // do the logic to figure out which friend is the best... 
     // for loop to check through each friends answers
-    for (var i =0;i<friendsArray.length;i++){
+    for (var i = 0; i < friendsArray.length; i++) {
         var counter = 0;
 
         // for each value in the friends scores, evaluate the difference and add to the relevant variable
-        friendsArray[i].scores.forEach(function(element){
+        friendsArray[i].scores.forEach(function (element) {
             var x = Math.abs(element - userANum[counter]);
             counter++
             // check which var to put the difference into
-            if (i == 0){
+            if (i == 0) {
                 joe += x;
             }
             else if (i == 1) {
@@ -87,13 +87,13 @@ app.post("/friends", function(req, res){
     }; // end for loop
 
     // if statements to account for every friend
-    if (joe < sal && joe < q && joe < murr){
+    if (joe < sal && joe < q && joe < murr) {
         res.json(friendsArray[0]);
     }
-    else if (sal < joe && sal < q && sal < murr){
+    else if (sal < joe && sal < q && sal < murr) {
         res.json(friendsArray[1]);
     }
-    else if (q < joe && q < sal && q < murr){
+    else if (q < joe && q < sal && q < murr) {
         res.json(friendsArray[2]);
     }
     else if (murr < joe && murr < sal && murr < q) {
@@ -105,12 +105,17 @@ app.post("/friends", function(req, res){
     // console.log(q);
     // console.log(murr);
 
+    // once we have iterated over the array push the user data into the friendsArray
+    friendsArray.push(newFriend);
+
+
+
+
 }); // end app.post
 
 
 // Starts the server to begin listening
 // =============================================================
-app.listen(PORT, function() {
+app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
-  });
-  
+});

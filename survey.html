@@ -41,6 +41,16 @@
                                 <h2>Survey Questions</h2>
                                 <hr>
 
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" id="name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone-number">Image URL</label>
+                                    <input type="text" class="form-control" id="image">
+                                </div>
+
                                 <h3><strong>Question 1</strong></h3>
                                 <h4>You find yourself getting bored often</h4>
                                 <select class="question form-control-lg  mb-3" id="q1">
@@ -173,7 +183,7 @@
                 </div>
                 <div class="modal-body">
                     <h1 id="friend-name"></h1>
-                 <img id="friend-image">
+                    <img id="friend-image">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -188,40 +198,42 @@
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
 <script type="text/javascript">
 
-$(".submit").on("click", function(event){
-    event.preventDefault();
-    var options = $(".question option:selected");
-    // .map goes through each .question and pulls out each option value and puts into the array answers
-    var answers = $.map(options, function (option) {
-        return option.value;
-    });
-    // console.log(answers);
+    $(".submit").on("click", function (event) {
+        event.preventDefault();
+        var options = $(".question option:selected");
+        // .map goes through each .question and pulls out each option value and puts into the array answers
+        var answers = $.map(options, function (option) {
+            return option.value;
+        });
+        // console.log(answers);
 
-    // put the answers into an object to send to the server.js
-    var friend = {
-        answers: answers
-    }
-
-    // make a post request to figure out which friend is the best match
-    $.post("/friends", friend)
-    .then(function(data){
-        console.log(data);
-        // update the modal elements according to which joker array is sent back???
-        // open the modal??????????
-
-        if (data) {
-            $("#friend-name").text(data.name);
-            $("#friend-image").attr("src", data.photo);
-            $("#friend-modal").modal("toggle");
+        // put the answers into an object to send to the server.js
+        var friend = {
+            name: $("#name").val(),
+            photo: $("#image").val(),
+            scores: answers
         }
-        else {
-            alert("sorry, no friends found :(");
-        }
-    });
+
+        // make a post request to figure out which friend is the best match
+        $.post("/friends", friend)
+            .then(function (data) {
+                console.log(data);
+                // update the modal elements according to which joker array is sent back???
+                // open the modal??????????
+
+                if (data) {
+                    $("#friend-name").text(data.name);
+                    $("#friend-image").attr("src", data.photo);
+                    $("#friend-modal").modal("toggle");
+                }
+                else {
+                    alert("sorry, no friends found :(");
+                }
+            });
 
 
-}); // end on click .submit
- 
+    }); // end on click .submit
+
 
 
 </script>
