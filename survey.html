@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Friend Finder</title>
+
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1 class="text-center">Friend Finder</h1>
+            <hr>
+            <h2 class="text-center">TAKE THE QUIZ</h2>
+            <br>
+            <div class="text-center">
+                <a href="/">
+                    <button class="btn btn-lg btn-default">
+                        <span class="fa fa-home"></span>
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Survey Page -->
+                <div class="card">
+                    <div class="card-body">
+                        <form id="daterForm" role="form">
+
+                            <div class="container">
+                                <h2>Survey Questions</h2>
+                                <hr>
+
+                                <h3><strong>Question 1</strong></h3>
+                                <h4>You find yourself getting bored often</h4>
+                                <select class="chosen-select form-control-lg  mb-3" id="q1">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                                <h3><strong>Question 2</strong></h3>
+                                <h4>You would rather stay up late then get up early.</h4>
+                                <select class="chosen-select form-control-lg  mb-3" id="q2">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                                <h3><strong>Question 3</strong></h3>
+                                <h4>You always make time for friends and family</h4>
+                                <select class="chosen-select form-control-lg  mb-3" id="q3">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+
+                                <h3><strong>Question 4</strong></h3>
+                                <h4>You enjoy alone time</h4>
+                                <select class="chosen-select form-control-lg  mb-3" id="q4">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+
+                                <h3><strong>Question 5</strong></h3>
+                                <h4>People rarely upset you</h4>
+                                <select class="chosen-select form-control-lg  mb-3" id="q5">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                                <h3><strong>Question 6</strong></h3>
+                                <h4>You enjoy meeting other peoples pets</h4>
+                                <select class="chosen-select form-control-lg  mb-3" id="q6">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+
+                                <h3><strong>Question 7</strong></h3>
+                                <h4>You value truth and loyalty in friends</h4>
+                                <select class="chosen-select form-control-lg  mb-3" id="q7">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                                <h3><strong>Question 8</strong></h3>
+                                <h4>You rarely ever procrastinate</h4>
+                                <select class="chosen-select form-control-lg  mb-3" id="q8">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                                <h3><strong>Question 9</strong></h3>
+                                <h4>You think everyone is entitled to their own opinion</h4>
+                                <select class="chosen-select form-control-lg  mb-3" id="q9">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                                <h3><strong>Question 10</strong></h3>
+                                <h4>You always feel you are full of energy</h4>
+                                <select class="chosen-select form-control-lg  mb-3" id="q10">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                                <br>
+                                <br>
+
+                                <!-- Submit Button -->
+
+                                <button type="submit" class="btn btn-primary submit" id="submit" data-toggle="modal"
+                                    data-target="#exampleModal">Submit</button>
+
+                                <hr>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="dater-match" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Your New Friend!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="friend-name" class="modal-body">
+            
+                </div>
+                <div id="friend-image" class="modal-body">
+                 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
+<script type="text/javascript">
+
+$(".submit").on("click", function(event){
+    event.preventDefault();
+    var options = $(".chosen-select option:selected");
+    // .map goes through each .chosen-select and pulls out each option value and puts into the array answers
+    var answers = $.map(options, function (option) {
+        return option.value;
+    });
+    console.log(answers);
+
+    // put the answers into an object to send to the server.js
+    var friend = {
+        answers: answers
+    }
+
+    // make a post request to figure out which friend is the best match
+    $.post("/friends", friend)
+    .then(function(data){
+        console.log(data);
+    });
+
+
+}); // end on click .submit
+ 
+
+
+</script>
