@@ -18,7 +18,7 @@
     <div class="container">
 
         <div class="jumbotron">
-            <h1 class="text-center">Friend Finder</h1>
+            <h1 class="text-center">Joker Friend Finder!</h1>
             <hr>
             <h2 class="text-center">TAKE THE QUIZ</h2>
             <br>
@@ -43,8 +43,7 @@
 
                                 <h3><strong>Question 1</strong></h3>
                                 <h4>You find yourself getting bored often</h4>
-                                <select class="chosen-select form-control-lg  mb-3" id="q1">
-                                    <option value=""></option>
+                                <select class="question form-control-lg  mb-3" id="q1">
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -54,8 +53,7 @@
 
                                 <h3><strong>Question 2</strong></h3>
                                 <h4>You would rather stay up late then get up early.</h4>
-                                <select class="chosen-select form-control-lg  mb-3" id="q2">
-                                    <option value=""></option>
+                                <select class="question form-control-lg  mb-3" id="q2">
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -65,8 +63,7 @@
 
                                 <h3><strong>Question 3</strong></h3>
                                 <h4>You always make time for friends and family</h4>
-                                <select class="chosen-select form-control-lg  mb-3" id="q3">
-                                    <option value=""></option>
+                                <select class="question form-control-lg  mb-3" id="q3">
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -77,8 +74,7 @@
 
                                 <h3><strong>Question 4</strong></h3>
                                 <h4>You enjoy alone time</h4>
-                                <select class="chosen-select form-control-lg  mb-3" id="q4">
-                                    <option value=""></option>
+                                <select class="question form-control-lg  mb-3" id="q4">
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -89,8 +85,7 @@
 
                                 <h3><strong>Question 5</strong></h3>
                                 <h4>People rarely upset you</h4>
-                                <select class="chosen-select form-control-lg  mb-3" id="q5">
-                                    <option value=""></option>
+                                <select class="question form-control-lg  mb-3" id="q5">
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -100,8 +95,7 @@
 
                                 <h3><strong>Question 6</strong></h3>
                                 <h4>You enjoy meeting other peoples pets</h4>
-                                <select class="chosen-select form-control-lg  mb-3" id="q6">
-                                    <option value=""></option>
+                                <select class="question form-control-lg  mb-3" id="q6">
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -112,8 +106,7 @@
 
                                 <h3><strong>Question 7</strong></h3>
                                 <h4>You value truth and loyalty in friends</h4>
-                                <select class="chosen-select form-control-lg  mb-3" id="q7">
-                                    <option value=""></option>
+                                <select class="question form-control-lg  mb-3" id="q7">
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -123,8 +116,7 @@
 
                                 <h3><strong>Question 8</strong></h3>
                                 <h4>You rarely ever procrastinate</h4>
-                                <select class="chosen-select form-control-lg  mb-3" id="q8">
-                                    <option value=""></option>
+                                <select class="question form-control-lg  mb-3" id="q8">
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -134,8 +126,7 @@
 
                                 <h3><strong>Question 9</strong></h3>
                                 <h4>You think everyone is entitled to their own opinion</h4>
-                                <select class="chosen-select form-control-lg  mb-3" id="q9">
-                                    <option value=""></option>
+                                <select class="question form-control-lg  mb-3" id="q9">
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -145,8 +136,7 @@
 
                                 <h3><strong>Question 10</strong></h3>
                                 <h4>You always feel you are full of energy</h4>
-                                <select class="chosen-select form-control-lg  mb-3" id="q10">
-                                    <option value=""></option>
+                                <select class="question form-control-lg  mb-3" id="q10">
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -174,25 +164,19 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="dater-match" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="friend-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Your New Friend!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
                 </div>
-                <div id="friend-name" class="modal-body">
-            
-                </div>
-                <div id="friend-image" class="modal-body">
-                 
+                <div class="modal-body">
+                    <h1 id="friend-name"></h1>
+                 <img id="friend-image">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
                 </div>
             </div>
         </div>
@@ -206,12 +190,12 @@
 
 $(".submit").on("click", function(event){
     event.preventDefault();
-    var options = $(".chosen-select option:selected");
-    // .map goes through each .chosen-select and pulls out each option value and puts into the array answers
+    var options = $(".question option:selected");
+    // .map goes through each .question and pulls out each option value and puts into the array answers
     var answers = $.map(options, function (option) {
         return option.value;
     });
-    console.log(answers);
+    // console.log(answers);
 
     // put the answers into an object to send to the server.js
     var friend = {
@@ -222,6 +206,17 @@ $(".submit").on("click", function(event){
     $.post("/friends", friend)
     .then(function(data){
         console.log(data);
+        // update the modal elements according to which joker array is sent back???
+        // open the modal??????????
+
+        if (data) {
+            $("#friend-name").text(data.name);
+            $("#friend-image").attr("src", data.photo);
+            $("#friend-modal").modal("toggle");
+        }
+        else {
+            alert("sorry, no friends found :(");
+        }
     });
 
 
