@@ -3,42 +3,42 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Friend Finder</title>
+    <title>Joker Friend Finder</title>
 
     <!-- Latest compiled and minified CSS & JS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
 
 </head>
 
 <body>
 
-    <div class="container">
-
-        <div class="jumbotron">
-            <h1 class="text-center">Joker Friend Finder!</h1>
-            <hr>
-            <h2 class="text-center">TAKE THE QUIZ</h2>
-            <br>
-            <div class="text-center">
-                <a href="/">
-                    <button class="btn btn-lg btn-default">
-                        <span class="fa fa-home"></span>
-                    </button>
-                </a>
-            </div>
+    <div class="jumbotron">
+        <h1 class="text-center">Joker Friend Finder!</h1>
+        <br>
+        <div class="text-center">
+            <a href="/">
+                <button class="btn home btn-lg btn-default">
+                    <span class="fa fa-home"></span>
+                </button>
+            </a>
         </div>
+    </div>
+    
+    <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <!-- Survey Page -->
+            <div class="col-md-12">
+                <!-- Survey -->
                 <div class="card">
                     <div class="card-body">
-                        <form id="daterForm" role="form">
+
+                        <form id="surveyForm" role="form">
 
                             <div class="container">
-                                <h2>Survey Questions</h2>
+                                <h2><strong>Survey Questions</strong></h2>
                                 <hr>
 
                                 <div class="form-group">
@@ -163,19 +163,19 @@
                                     data-target="#exampleModal">Submit</button>
 
                                 <hr>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+                        </form> <!-- end form -->
+
+                    </div> <!-- end card-body -->
+                </div> <!-- end card -->
+            </div> <!-- end col-md-12 -->
+        </div> <!-- end row -->
 
 
     </div>
 
 
     <!-- Modal -->
-    <div class="modal fade" id="friend-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="friend-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -188,24 +188,24 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
-            </div>
-        </div>
-    </div>
+            </div> <!-- end modal-content -->
+        </div> <!-- end modal-dialog -->
+    </div> <!-- end modal fade -->
+
+
 </body>
 
 </html>
 
-<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
 <script type="text/javascript">
 
     $(".submit").on("click", function (event) {
         event.preventDefault();
         var options = $(".question option:selected");
         // .map goes through each .question and pulls out each option value and puts into the array answers
-        var answers = $.map(options, function (option) {
-            return option.value;
+        var answers = $.map(options, function (options) {
+            return options.value;
         });
-        // console.log(answers);
 
         // put the answers into an object to send to the server.js
         var friend = {
@@ -218,8 +218,6 @@
         $.post("/friends", friend)
             .then(function (data) {
                 console.log(data);
-                // update the modal elements according to which joker array is sent back???
-                // open the modal??????????
 
                 if (data) {
                     $("#friend-name").text(data.name);
@@ -230,7 +228,6 @@
                     alert("sorry, no friends found :(");
                 }
             });
-
 
     }); // end on click .submit
 

@@ -1,25 +1,28 @@
-// Dependencies
-// =============================================================
+// ============ //
+// Dependencies //
+// ============ //
 var express = require("express");
 var path = require("path");
 
 // require our friends array
 var friendsArray = require("./friends")
 
-// Sets up the Express App
-// =============================================================
+
+// ======================= //
+// Sets up the Express App //
+// ======================= //
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-// Sets up the Express app to handle data parsingclear
 
+// Sets up the Express app to handle data parsingclear
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Routes
-// =============================================================
 
-app.get("*")
+// ====== //
+// Routes //
+// ====== //
 
 // home page, display the home.html
 app.get('/', (req, res) => {
@@ -31,11 +34,12 @@ app.get("/survey", (req, res) => {
     res.sendFile(path.join(__dirname, "survey.html"));
 })
 
-// link to the Friends API, will return the json formatted friendsArray (which is being required from friends.js)
+// link to the Friends API, will return the json formatted friendsArray (which is being taken from friends.js)
 app.get("/friends", function (req, res) {
     return res.json(friendsArray);
 });
 
+// whenever the user posts to the server through the survey
 app.post("/friends", function (req, res) {
 
     // set the request object body equal to a variable
@@ -105,17 +109,15 @@ app.post("/friends", function (req, res) {
     // console.log(q);
     // console.log(murr);
 
-    // once we have iterated over the array push the user data into the friendsArray
-    friendsArray.push(newFriend);
-
-
-
+    // this pushes the users info into the friends array but is unnecessary in this case 
+    // friendsArray.push(newFriend);
 
 }); // end app.post
 
 
-// Starts the server to begin listening
-// =============================================================
+// ==================================== //
+// Starts the server to begin listening //
+// ==================================== //
 app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
 });
