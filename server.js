@@ -104,6 +104,7 @@ app.post("/friends", function (req, res) {
         res.json(friendsArray[3]);
     }
     // check each friends total
+    
     // console.log(joe);
     // console.log(sal);
     // console.log(q);

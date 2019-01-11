@@ -22,20 +22,42 @@
             .jumbotron {
               background-image: url("https://cdn.shopify.com/s/files/1/1575/8079/collections/IJ_Shop_-_Season_7_Banner_Evergreen.png?v=1526496689");
               background-size: cover;
+              text-align: center;
             }
     
         
-            h1.text-center {
+            h1.header {
               color: white;
               font-size: 5em;
               text-shadow: 1px 1px 3px black, -1px -1px 3px black, 1px -1px 3px purple, -1px 1px 3px purple;
               margin-bottom: 0px;
+            }
+
+            button.btn {
+                margin: 0 auto;
             }
         
         
             .home:hover {
               box-shadow: 1px 1px 3px black, -1px -1px 3px black, 1px -1px 3px purple, -1px 1px 3px purple;
             }
+
+            .survey.container {
+                border: 1px solid black;
+                background-color: white;
+                padding-top: 1%;
+                padding-bottom: 1%;
+                margin-bottom: 2%;
+            }
+
+            .question {
+                width: 50%;
+            }
+
+            hr {
+                margin-top: 0px;
+            }
+
     
           </style>
 
@@ -43,178 +65,160 @@
 
 <body>
 
+
+
     <div class="jumbotron">
-        <h1 class="text-center">Joker Friend Finder!</h1>
-        <br>
-        <div class="text-center">
-            <a href="/">
-                <button class="btn home btn-lg btn-default">
-                    <span class="fa fa-home"></span>
-                </button>
-            </a>
-        </div>
-    </div>
+        <h1 class="header">Joker Friend Finder!</h1>
+        <a href="/"><button class="btn btn-success">Home →</button></a>
+    </div> <!-- end jumbotron -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <!-- Survey -->
-                <div class="card">
-                    <div class="card-body">
+    <div class="survey container">
+        <h1 id="title"><strong>Survey Questions</strong></h1>
+        <hr>
+        <form id="surveyForm">
+            <div class="form-group">
+                <label for='userName'>Name</label>
+                <input type="text" class="form-control" id="Name">
+            </div> <!-- end form-group -->
+            <div class="form-group">
+                <label for="userImage">Image URL</label>
+                <input type="text" class="form-control" id="userImage">
+            </div> <!-- end form-group -->
+            <hr>
+            <div id="surveyQuestions">
+                <h3>Q1. You find yourself becoming bored quickly</h3>
+                <div class="form-group">
+                    <select class="form-control question" id="q1">
+                        <option value=1>1 (strongly agree)</option>
+                        <option value=2> 2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5 (strongly disagree)</option>
+                    </select>
+                </div>
+                <br>
+                <h3>Q2. You would rather stay up late then get up early</h3>
+                <div class="form-group">
+                    <select class="form-control question" id="q2">
+                        <option value=1>1 (strongly agree)</option>
+                        <option value=2> 2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5 (strongly disagree)</option>
+                    </select>
+                </div>
+                <br>
+                <h3>Q3. You enjoy meeting new people</h3>
+                <div class="form-group">
+                    <select class="form-control question" id="q3">
+                        <option value=1>1 (strongly agree)</option>
+                        <option value=2> 2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5 (strongly disagree)</option>
+                    </select>
+                </div>
+                <br>
+                <h3>Q4. You find that you procrastinate often</h3>
+                <div class="form-group">
+                    <select class="form-control question" id="q4">
+                        <option value=1>1 (strongly agree)</option>
+                        <option value=2> 2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5 (strongly disagree)</option>>
+                    </select>
+                </div>
+                <br>
+                <h3>Q5. You would consider yourself an introvert</h3>
+                <div class="form-group">
+                    <select class="form-control question" id="q5">
+                        <option value=1>1 (strongly agree)</option>
+                        <option value=2> 2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5 (strongly disagree)</option>
+                    </select>
+                </div>
+                <br>
+                <h3>Q6. You enjoy big group settings</h3>
+                <div class="form-group">
+                    <select class="form-control question" id="q6">
+                        <option value=1>1 (strongly agree)</option>
+                        <option value=2> 2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5 (strongly disagree)</option>
+                    </select>
+                </div>
+                <br>
+                <h3>Q7. You enjoy meeting other people's pets</h3>
+                <div class="form-group">
+                    <select class="form-control question" id="q7">
+                        <option value=1>1 (strongly agree)</option>
+                        <option value=2> 2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5 (strongly disagree)</option>
+                    </select>
+                </div>
+                <br>
+                <h3>Q8. You would rather have a small circle of friends</h3>
+                <div class="form-group">
+                    <select class="form-control question" id="q8">
+                        <option value=1>1 (strongly agree)</option>
+                        <option value=2> 2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5 (strongly disagree)</option>
+                    </select>
+                </div>
+                <br>
+                <h3>Q9. You are always looking for new ways to expand your horizons</h3>
+                <div class="form-group">
+                    <select class="form-control question" id="q9">
+                        <option value=1>1 (strongly agree)</option>
+                        <option value=2> 2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5 (strongly disagree)</option>
+                    </select>
+                </div>
+                <br>
+                <h3>Q10. You enjoy your alone time</h3>
+                <div class="form-group">
+                    <select class="form-control question" id="q10">
+                        <option value=1>1 (strongly agree)</option>
+                        <option value=2> 2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5 (strongly disagree)</option>
+                    </select>
+                </div>
 
-                        <form id="surveyForm" role="form">
-
-                            <div class="container">
-                                <h2><strong>Survey Questions</strong></h2>
-                                <hr>
-
-                                <div class="form-group">
-                                    <label for="name">Name</label>
-                                    <input type="text" class="form-control" id="name">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="phone-number">Image URL</label>
-                                    <input type="text" class="form-control" id="image">
-                                </div>
-
-                                <h3><strong>Question 1</strong></h3>
-                                <h4>You find yourself getting bored often</h4>
-                                <select class="question form-control-lg  mb-3" id="q1">
-                                    <option value="1">1 (Strongly Disagree)</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 (Strongly Agree)</option>
-                                </select>
-
-                                <h3><strong>Question 2</strong></h3>
-                                <h4>You would rather stay up late then get up early.</h4>
-                                <select class="question form-control-lg  mb-3" id="q2">
-                                    <option value="1">1 (Strongly Disagree)</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 (Strongly Agree)</option>
-                                </select>
-
-                                <h3><strong>Question 3</strong></h3>
-                                <h4>You always make time for friends and family</h4>
-                                <select class="question form-control-lg  mb-3" id="q3">
-                                    <option value="1">1 (Strongly Disagree)</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 (Strongly Agree)</option>
-                                </select>
-
-
-                                <h3><strong>Question 4</strong></h3>
-                                <h4>You enjoy alone time</h4>
-                                <select class="question form-control-lg  mb-3" id="q4">
-                                    <option value="1">1 (Strongly Disagree)</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 (Strongly Agree)</option>
-                                </select>
-
-
-                                <h3><strong>Question 5</strong></h3>
-                                <h4>People rarely upset you</h4>
-                                <select class="question form-control-lg  mb-3" id="q5">
-                                    <option value="1">1 (Strongly Disagree)</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 (Strongly Agree)</option>
-                                </select>
-
-                                <h3><strong>Question 6</strong></h3>
-                                <h4>You enjoy meeting other peoples pets</h4>
-                                <select class="question form-control-lg  mb-3" id="q6">
-                                    <option value="1">1 (Strongly Disagree)</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 (Strongly Agree)</option>
-                                </select>
-
-
-                                <h3><strong>Question 7</strong></h3>
-                                <h4>You value truth and loyalty in friends</h4>
-                                <select class="question form-control-lg  mb-3" id="q7">
-                                    <option value="1">1 (Strongly Disagree)</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 (Strongly Agree)</option>
-                                </select>
-
-                                <h3><strong>Question 8</strong></h3>
-                                <h4>You rarely ever procrastinate</h4>
-                                <select class="question form-control-lg  mb-3" id="q8">
-                                    <option value="1">1 (Strongly Disagree)</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 (Strongly Agree)</option>
-                                </select>
-
-                                <h3><strong>Question 9</strong></h3>
-                                <h4>You think everyone is entitled to their own opinion</h4>
-                                <select class="question form-control-lg  mb-3" id="q9">
-                                    <option value="1">1 (Strongly Disagree)</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 (Strongly Agree)</option>
-                                </select>
-
-                                <h3><strong>Question 10</strong></h3>
-                                <h4>You always feel you are full of energy</h4>
-                                <select class="question form-control-lg  mb-3" id="q10">
-                                    <option value="1">1 (Strongly Disagree)</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 (Strongly Agree)</option>
-                                </select>
-
-                                <br>
-                                <br>
-
-                                <!-- Submit Button -->
-
-                                <button type="submit" class="btn btn-primary submit" id="submit" data-toggle="modal"
-                                    data-target="#exampleModal">Submit</button>
-
-                                <hr>
-                        </form> <!-- end form -->
-
-                    </div> <!-- end card-body -->
-                </div> <!-- end card -->
-            </div> <!-- end col-md-12 -->
-        </div> <!-- end row -->
+                <button type="submit" class="btn btn-success submit" id="submit" data-toggle="modal" data-target="friend-modal">Submit
+                    →</button>
+            </div><!-- end surveyQuestions -->
+        </form>
+    </div> <!-- end survey container -->
 
 
-    </div>
 
 
     <!-- Modal -->
-    <div class="modal fade" id="friend-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <!-- sourced from bootstrap documentation -->
+    <div class="modal fade" id="friend-modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Your New Friend!</h5>
+                    <h5 class="modal-title">Your New Friend!</h5>
                 </div>
                 <div class="modal-body">
                     <h1 id="friend-name"></h1>
                     <img id="friend-image">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Close →</button>
                 </div>
             </div> <!-- end modal-content -->
         </div> <!-- end modal-dialog -->
@@ -228,11 +232,17 @@
 <script type="text/javascript">
 
     $(".submit").on("click", function (event) {
+        // prevent the button from linking or refreshing
         event.preventDefault();
+
+        // set a variable equal to the array of selected answers for every .question class
         var options = $(".question option:selected");
-        // .map goes through each .question and pulls out each option value and puts into the array answers
-        var answers = $.map(options, function (options) {
-            return options.value;
+        // console.log(options);
+
+        // .map goes through each item in options and returns the value
+        var answers = $.map(options, function (answer) {
+            // console.log(answer.value);
+            return answer.value;
         });
 
         // put the answers into an object to send to the server.js
@@ -245,12 +255,12 @@
         // make a post request to figure out which friend is the best match
         $.post("/friends", friend)
             .then(function (data) {
-                console.log(data);
+                // console.log(data);
 
                 if (data) {
                     $("#friend-name").text(data.name);
                     $("#friend-image").attr("src", data.photo);
-                    $("#friend-modal").modal("toggle");
+                    $("#friend-modal").modal("show");
                 }
                 else {
                     alert("sorry, no friends found :(");
